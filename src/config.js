@@ -25,10 +25,10 @@ export const CONFIG = {
     title: "our memory lane sayangg",
     subtitle: "beberapa momen manis yang selalu aku simpannn",
     photos: [
-        { url: "/assets/4934540375_127696184322037_1777630252339.png", caption: "kamu yang selalu cantikk bangett dalam segala kondisi sayanggg" },
-        { url: "/assets/IMG-20260530-WA0020.jpg.jpeg", caption: "saat-saat manis kita berdua yang selalu bikin kangen bangett" },
-        { url: "/assets/IMG-20260602-WA0003.jpg.jpeg", caption: "senyuman terindah kamu yang gak pernah bosen aku lihattt bebee" },
-        { url: "/assets/IMG-20260613-WA0055.jpg.jpeg", caption: "semoga kita terus bareng-bareng dan bikin memori indah lainnya yaaa cintaaa" }
+        { url: "/assets/4934540375_127696184322037_1777630252339.png", caption: "kamuu inget tidaa sama foto inii, dimana awal awal kita bikin baju couple, terusss kamuu ajakin ke mapp inii yang menurut akuu bagus banget view nya apalagi ada kamuu tambah EGILUYYY HIDJJSIADJJJSIAJJJD hihi mwaa lovveuuu" },
+        { url: "/assets/RobloxScreenShot20250518_155050642.png", caption: "kamuuu inget tidaa pas awal awal kitaa aga dekett, dimana kamu pinjem golden butterfly akuu, akuu ajarin moon melon method" },
+        { url: "/assets/IMG-20260602-WA0003.jpg.jpeg", caption: "HIIHHHDSAHDSAIDHSAD CANTIKKK BANGETT SIII HEEII CEWE CIAPAA NIIII, JELASSS CEWE GUAAA" },
+        { url: "/assets/IMG-20260613-WA0055.jpg.jpeg", caption: "semogaaa kita terus bareng bareng yaa sayangg di segala kondisiii walauppunn akuu sedang adaa masalah atau kamuu sebaliknyaa, kita saling support yaaa" }
       ],
     buttonText: "buka surat cintaaa"
   },
@@ -38,11 +38,11 @@ export const CONFIG = {
     title: "our secret garden bebee",
     subtitle: "tap kuncup bunganya satu-satu buat liat hidden message-nya yaaa",
     flowers: [
-      { id: 1, name: "mawar merah", color: "from-rose-400 to-red-600", message: "jujur kamu tuh selalu bisa bikin mood aku naikkk, even pas aku lagi hectic atau down bangett. makasih yaa udah jadi sinar matahari buat hidup akuuu sayangg!" },
-      { id: 2, name: "tulip pink", color: "from-pink-400 to-rose-500", message: "ketawa kamu, bicara kamu, apapun tentang kamu bikin aku jatuh cinta lagi dan lagiii bebee. makin hari makin sayanggg sama kamu!" },
-      { id: 3, name: "matahari", color: "from-yellow-400 to-amber-500", message: "makasih ya udah super sabarr menghadapi aku dan selalu ada buat aku, no matter whatttt. kamu adalah rumah terindah buat aku cintaaa!" },
-      { id: 4, name: "lavender", color: "from-purple-400 to-indigo-500", message: "happy birthday sayangg! semoga di umur baru ini kamu makin happyyy, less overthinking, dan semua impian kamu tercapaii semua yaaa bebee!" },
-      { id: 5, name: "lily putih", color: "from-slate-100 to-pink-200", message: "i love you to the moon and back sayangg. kemarin, sekarang, dan selamanya. selalu dan selamanya buat aku cintaaa!" }
+      { id: 1, name: "mawar merah", color: "from-rose-400 to-red-600", message: "aku pilih mawar merah karena bunga ini lambang cinta yang dalam dan tahan lama, kayak perasaan aku ke kamu juga gak pernah pudar, cuma makin dalam setiap hari! 💖" },
+      { id: 2, name: "tulip pink", color: "from-pink-400 to-rose-500", message: "tulip pink mewakili kebahagiaan dan cinta manis, sama kayak kamu yang selalu bikin hari-hari aku berwarna cerah dan penuh senyum! 🌷" },
+      { id: 3, name: "matahari", color: "from-yellow-400 to-amber-500", message: "bunga matahari selalu menghadap matahari, kamu selalu menghadap kebaikan, kamu bikin aku semangat dan merasa hangat setiap saat! ☀️" },
+      { id: 4, name: "lavender", color: "from-purple-400 to-indigo-500", message: "lavender buat ketenangan, kamu selalu buat aku tenang dan nyaman, sama kayak aroma lavender yang bikin orang tidur nyenyak! 💜" },
+      { id: 5, name: "lily putih", color: "from-slate-100 to-pink-200", message: "lily putih mewakili kesucian dan keindahan, sama kayak kamu yang selalu terlihat sempurna di mata aku, cantik dari dalam maupun luar! 🤍" }
     ],
     buttonText: "next surprise donggg"
   },
