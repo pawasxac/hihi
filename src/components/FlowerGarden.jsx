@@ -43,11 +43,11 @@ const MatahariSVG = ({ className }) => (
 
 export default function FlowerGarden({ onComplete }) {
   const [bloomed, setBloomed] = useState({});
-  const [activeTooltip, setActiveTooltip] = useState(null);
+  const [activeTooltipId, setActiveTooltipId] = useState(null);
 
   const handleBloom = (id) => {
     setBloomed((prev) => ({ ...prev, [id]: true }));
-    setActiveTooltip(id);
+    setActiveTooltipId(id);
   };
 
   const allBloomed = CONFIG.garden.flowers.every((f) => bloomed[f.id]);
@@ -88,7 +88,7 @@ export default function FlowerGarden({ onComplete }) {
       <div className="w-full overflow-x-auto py-12 px-8 flex justify-start md:justify-center items-center gap-8 snap-x snap-mandatory relative z-10">
         {CONFIG.garden.flowers.map((flower, index) => {
           const isThisBloomed = !!bloomed[flower.id];
-          const isTooltipOpen = activeTooltip === flower.id;
+          const isTooltipOpen = activeTooltipId === flower.id;
 
           return (
             <motion.div
@@ -96,16 +96,16 @@ export default function FlowerGarden({ onComplete }) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="flex-shrink-0 w-48 h-64 glass rounded-xl p-4 flex flex-col justify-end items-center snap-center"
+              className="flex-shrink-0 w-48 h-64 glass rounded-xl p-4 flex flex-col justify-end items-center snap-center relative"
             >
-              {/* Tooltip Message */}
+              {/* Tooltip Message - Fixed position above flower */}
               <AnimatePresence>
                 {isTooltipOpen && (
                   <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: -10 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="absolute top-4 left-4 right-4 bg-pink-600/95 text-white p-3 rounded-lg text-xs text-center"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: -5 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className="absolute top-2 left-2 right-2 bg-pink-600/95 text-white p-3 rounded-lg text-xs text-center"
                   >
                     <p>{flower.message}</p>
                   </motion.div>
@@ -151,9 +151,9 @@ export default function FlowerGarden({ onComplete }) {
               </div>
 
               {/* Trigger message button */}
-              {isThisBloomed && !isTooltipOpen && (
+              {isThisBloomed && (
                 <button
-                  onClick={() => setActiveTooltip(flower.id)}
+                  onClick={() => setActiveTooltipId(isTooltipOpen ? null : flower.id)}
                   className="absolute bottom-3 right-3 text-pink-400/70"
                 >
                   <MessageCircleHeart size={14} />
