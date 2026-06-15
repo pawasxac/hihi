@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, MessageCircleHeart } from 'lucide-react';
 import { CONFIG } from '../config';
 
-// Custom flower SVG
+// Custom beautiful flower SVG
 const MawarSVG = ({ className }) => (
   <svg viewBox="0 0 64 64" className={className}>
     <g className="text-rose-400 fill-current">
@@ -35,9 +35,43 @@ const MatahariSVG = ({ className }) => (
       <rect x="30" y="44" width="4" height="12" rx="2" />
       <rect x="8" y="30" width="12" height="4" rx="2" />
       <rect x="44" y="30" width="12" height="4" rx="2" />
+      <rect x="12" y="12" width="4" height="10" rx="2" transform="rotate(-45 14 17)" />
+      <rect x="48" y="12" width="4" height="10" rx="2" transform="rotate(45 50 17)" />
+      <rect x="12" y="44" width="4" height="10" rx="2" transform="rotate(45 14 49)" />
+      <rect x="48" y="44" width="4" height="10" rx="2" transform="rotate(-45 50 49)" />
     </g>
     <circle cx="32" cy="32" r="8" className="text-yellow-500 fill-current" />
     <circle cx="32" cy="32" r="5" className="text-amber-700 fill-current" />
+  </svg>
+);
+
+const LavenderSVG = ({ className }) => (
+  <svg viewBox="0 0 64 64" className={className}>
+    <rect x="30" y="30" width="4" height="30" className="text-green-600 fill-current" />
+    <g className="text-purple-400 fill-current">
+      <ellipse cx="32" cy="18" rx="6" ry="9" />
+      <ellipse cx="25" cy="24" rx="5" ry="7" transform="rotate(-15 25 24)" />
+      <ellipse cx="39" cy="24" rx="5" ry="7" transform="rotate(15 39 24)" />
+      <ellipse cx="24" cy="32" rx="5" ry="7" transform="rotate(-25 24 32)" />
+      <ellipse cx="40" cy="32" rx="5" ry="7" transform="rotate(25 40 32)" />
+      <ellipse cx="26" cy="12" rx="4" ry="6" />
+      <ellipse cx="38" cy="12" rx="4" ry="6" />
+    </g>
+  </svg>
+);
+
+const LilySVG = ({ className }) => (
+  <svg viewBox="0 0 64 64" className={className}>
+    <g className="text-pink-100 fill-current">
+      <ellipse cx="32" cy="18" rx="7" ry="16" />
+      <ellipse cx="21" cy="26" rx="6" ry="14" transform="rotate(-40 21 26)" />
+      <ellipse cx="43" cy="26" rx="6" ry="14" transform="rotate(40 43 26)" />
+      <ellipse cx="20" cy="38" rx="6" ry="12" transform="rotate(-60 20 38)" />
+      <ellipse cx="44" cy="38" rx="6" ry="12" transform="rotate(60 44 38)" />
+      <ellipse cx="32" cy="44" rx="5" ry="10" />
+    </g>
+    <rect x="30" y="42" width="4" height="20" className="text-green-500 fill-current" />
+    <circle cx="32" cy="28" r="4" className="text-yellow-400 fill-current" />
   </svg>
 );
 
@@ -57,8 +91,8 @@ export default function FlowerGarden({ onComplete }) {
       case 1: return <MawarSVG className="w-16 h-16" />;
       case 2: return <TulipSVG className="w-16 h-16" />;
       case 3: return <MatahariSVG className="w-16 h-16" />;
-      case 4: return <div className="w-16 h-16 rounded-full bg-purple-400" />;
-      case 5: return <div className="w-16 h-16 rounded-full bg-white" />;
+      case 4: return <LavenderSVG className="w-16 h-16" />;
+      case 5: return <LilySVG className="w-16 h-16" />;
       default: return null;
     }
   };
@@ -98,22 +132,8 @@ export default function FlowerGarden({ onComplete }) {
               transition={{ delay: index * 0.1 }}
               className="flex-shrink-0 w-48 h-64 glass rounded-xl p-4 flex flex-col justify-end items-center snap-center relative"
             >
-              {/* Tooltip Message - Fixed position above flower */}
-              <AnimatePresence>
-                {isTooltipOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: -5 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    className="absolute top-2 left-2 right-2 bg-pink-600/95 text-white p-3 rounded-lg text-xs text-center"
-                  >
-                    <p>{flower.message}</p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-
               {/* Interactive Flower */}
-              <div className="w-28 h-28 flex items-center justify-center relative mb-2">
+              <div className="w-28 h-28 flex items-center justify-center relative mb-2 mt-2">
                 <motion.div
                   onClick={() => handleBloom(flower.id)}
                   whileHover={{ scale: 1.05 }}
@@ -139,6 +159,20 @@ export default function FlowerGarden({ onComplete }) {
                   )}
                 </motion.div>
               </div>
+
+              {/* Tooltip Message - Positioned ABOVE the flower */}
+              <AnimatePresence>
+                {isTooltipOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10, scale: 0.9 }}
+                    animate={{ opacity: 1, y: -5, scale: 1 }}
+                    exit={{ opacity: 0, y: -10, scale: 0.9 }}
+                    className="absolute top-0 left-2 right-2 bg-pink-600/95 text-white p-3 rounded-lg text-xs text-center"
+                  >
+                    <p>{flower.message}</p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
               {/* Stem */}
               <div className="w-1.5 h-16 bg-gradient-to-b from-green-500 to-green-800 rounded-full" />
