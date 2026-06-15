@@ -1,31 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, Heart, PartyPopper } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Heart, PartyPopper } from 'lucide-react';
 
-export default function InteractiveFeatures({ totalLoveCount }) {
-  const [showMilestone, setShowMilestone] = useState(null);
+export default function InteractiveFeatures() {
   const [fireworksActive, setFireworksActive] = useState(false);
   const canvasRef = useRef(null);
   const fireworksIntervalRef = useRef(null);
-
-  // Simple, sweet messages
-  const milestones = [
-    { count: 10, message: "Terima kasih udah sayang banget! 🤍" },
-    { count: 25, message: "Wah, kamu sayang banget ya? 💝" },
-    { count: 50, message: "Luar biasa! Semoga hari ini penuh kebahagiaan! 🥰" },
-    { count: 100, message: "Kamu bikin dia senang banget! Selamat ulang tahun! 🎉" },
-  ];
-
-  // Check for milestone whenever totalLoveCount changes
-  useEffect(() => {
-    const milestone = milestones.find(m => m.count === totalLoveCount);
-    if (milestone) {
-      setShowMilestone(milestone);
-      setTimeout(() => {
-        setShowMilestone(null);
-      }, 3500);
-    }
-  }, [totalLoveCount]);
 
   // Fireworks logic
   const launchFireworks = () => {
@@ -127,32 +107,8 @@ export default function InteractiveFeatures({ totalLoveCount }) {
         style={{ display: fireworksActive ? 'block' : 'none' }}
       />
 
-      {/* Love Counter - Simple & Clean */}
-      <div className="fixed top-3 right-3 z-[50]">
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="bg-zinc-900/90 backdrop-blur-md rounded-xl p-3 shadow-xl border border-zinc-700/50"
-        >
-          <div className="flex items-center gap-2">
-            <div className="text-xl">❤️</div>
-            <div className="flex flex-col">
-              <p className="text-[10px] text-zinc-400">Love Taps</p>
-              <motion.p 
-                key={totalLoveCount}
-                initial={{ scale: 1.2 }}
-                animate={{ scale: 1 }}
-                className="text-2xl font-bold text-pink-400"
-              >
-                {totalLoveCount}
-              </motion.p>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-
-      {/* Fireworks Button - Simple */}
-      <div className="fixed bottom-28 right-3 z-[50]">
+      {/* Fireworks Button */}
+      <div className="fixed bottom-20 right-3 z-[50]">
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
@@ -167,23 +123,6 @@ export default function InteractiveFeatures({ totalLoveCount }) {
           <PartyPopper className="w-6 h-6 text-white" />
         </motion.button>
       </div>
-
-      {/* Milestone Popup - Simple */}
-      <AnimatePresence>
-        {showMilestone && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[100]"
-          >
-            <div className="bg-zinc-900/95 backdrop-blur-md text-white px-6 py-5 rounded-2xl shadow-xl border border-zinc-700/50 text-center max-w-[90vw">
-              <div className="text-4xl mb-3">🎉</div>
-              <p className="text-lg font-medium">{showMilestone.message}</p>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </>
   );
 }

@@ -31,7 +31,6 @@ function App() {
   // Global Interactive Click Particles State
   const [clickParticles, setClickParticles] = useState([]);
   const [mouseTrail, setMouseTrail] = useState([]);
-  const [totalLoveCount, setTotalLoveCount] = useState(0);
 
   // Mouse Move listener for trailing particles
   useEffect(() => {
@@ -140,7 +139,6 @@ function App() {
       y: e.clientY,
     };
     setClickParticles(prev => [...prev, newParticle].slice(-15)); // Keep max 15 particles in memory
-    setTotalLoveCount(prev => prev + 1); // Increment total love count
   };
 
   // Cleanup particles after animation
@@ -159,7 +157,7 @@ function App() {
       className="w-full min-h-screen bg-zinc-950 text-slate-100 flex flex-col justify-between select-none overflow-x-hidden font-sans relative"
     >
       {/* Interactive Features */}
-      <InteractiveFeatures totalLoveCount={totalLoveCount} />
+      <InteractiveFeatures />
 
       {/* Mouse Trail Sparkle Emitter - MAXIMAL */}
       <AnimatePresence>
