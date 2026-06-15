@@ -25,11 +25,11 @@ export const CONFIG = {
     title: "our memory lane sayangg",
     subtitle: "beberapa momen manis yang selalu aku simpannn",
     photos: [
-      { url: "/assets/IMG-20260527-WA0009.jpg.jpeg", caption: "kamu yang selalu cantikk bangett dalam segala kondisi sayanggg" },
-      { url: "/assets/IMG-20260530-WA0020.jpg.jpeg", caption: "saat-saat manis kita berdua yang selalu bikin kangen bangett" },
-      { url: "/assets/IMG-20260602-WA0003.jpg.jpeg", caption: "senyuman terindah kamu yang gak pernah bosen aku lihattt bebee" },
-      { url: "/assets/IMG-20260613-WA0055.jpg.jpeg", caption: "semoga kita terus bareng-bareng dan bikin memori indah lainnya yaaa cintaaa" }
-    ],
+        { url: "/assets/4934540375_127696184322037_1777630252339.png", caption: "kamu yang selalu cantikk bangett dalam segala kondisi sayanggg" },
+        { url: "/assets/IMG-20260530-WA0020.jpg.jpeg", caption: "saat-saat manis kita berdua yang selalu bikin kangen bangett" },
+        { url: "/assets/IMG-20260602-WA0003.jpg.jpeg", caption: "senyuman terindah kamu yang gak pernah bosen aku lihattt bebee" },
+        { url: "/assets/IMG-20260613-WA0055.jpg.jpeg", caption: "semoga kita terus bareng-bareng dan bikin memori indah lainnya yaaa cintaaa" }
+      ],
     buttonText: "buka surat cintaaa"
   },
 
